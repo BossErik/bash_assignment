@@ -1,4 +1,6 @@
-all: guessinggame.sh
+all: README.md
+
+README.md: guessinggame.sh
 	echo "# My first Bash Project" > README.md
 	echo "## This is my course assignment" >> README.md
 	echo -n "- Number of lines in the bash script guessinggame.sh: " >> README.md
@@ -7,5 +9,5 @@ all: guessinggame.sh
 	date >> README.md
 
 clean:
-	rm README.md
+	rm -f README.md
 
