@@ -9,7 +9,7 @@ echo -n "Welcome to the guessinggame please enter a number, which is equal to th
 read input
 	while true
 	do
-		if [[ $input -gt $count ]] 
+		if [[ $input -gt $count ]]
 		then
 			echo "your guess was too high"
 			echo -n "please try it again, enter another number: "
@@ -26,4 +26,3 @@ read input
 		fi
 	done
 exit 0
-
