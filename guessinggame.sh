@@ -5,24 +5,24 @@ function get_number_files {
 	echo $count
 }
 count=$(get_number_files)
-echo -n "Welcome to the guessinggame please enter a number, which is equal to the number of files in your current directory: "
-read input
+echo "Welcome to the guessinggame"
 	while true
 	do
-		if [[ $input -gt $count ]]
+		echo -n "Please enter a number: "
+		read input
+		if [[ $input =~ ^[0-9]+$ ]]
 		then
-			echo "your guess was too high"
-			echo -n "please try it again, enter another number: "
-			read input
-		elif [[ $input -eq $count ]]
-		then
-			echo "congrats you made it"
-			break
-		elif [[ $input -lt $count ]]
-		then
-			echo "your guess was too low"
-			echo -n "please try it again, enter another number: "
-			read input
+			if [[ $input -gt $count ]]
+			then
+				echo "your guess was too high"
+			elif [[ $input -eq $count ]]
+			then
+				echo "congrats you made it"
+				break
+			elif [[ $input -lt $count ]]
+			then
+				echo "your guess was too low"
+			fi
 		fi
 	done
 exit 0
